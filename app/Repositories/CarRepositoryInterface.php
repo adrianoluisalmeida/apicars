@@ -1,12 +1,20 @@
 <?php
+
 namespace App\Repositories;
-use Illuminate\Http\Request;
+
+use App\Models\Cars;
 
 interface CarRepositoryInterface
 {
-    public function getAll();
-    public function get($id);
-    public function store(Request $request);
-    public function update($id, Request $request);
-    public function destroy($id);
+    public function __construct(Cars $cars);
+
+	public function getAll();
+	
+	public function get($id);
+	
+	public function store(array $data);
+	
+	public function update($id, array $data);
+	
+	public function destroy($id);
 }
