@@ -8,7 +8,6 @@
 
 namespace App\Models;
 
-
 class ValidationCar
 {
     const RULE_CAR = [

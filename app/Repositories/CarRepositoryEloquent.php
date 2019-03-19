@@ -1,8 +1,7 @@
 <?php
+
 namespace App\Repositories;
 
-
-use Illuminate\Http\Request;
 use App\Models\Cars;
 
 class CarRepositoryEloquent implements CarRepositoryInterface
@@ -24,21 +23,18 @@ class CarRepositoryEloquent implements CarRepositoryInterface
         return $this->model->find($id);
     }
 
-    public function store(Request $request)
+    public function store(array $data)
     {
-        return $this->model->create($request->all());
+        return $this->model->create($data);
     }
 
-    public function update($id, Request $request)
+    public function update($id, array $data)
     {
-        return $this->model->find($id)
-            ->update($request->all());
+        return $this->model->find($id)->update($data);
     }
 
     public function destroy($id)
     {
-        return $this->model->find($id)
-            ->delete();
+        return $this->model->find($id)->delete();
     }
-
 }
