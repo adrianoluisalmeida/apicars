@@ -8,7 +8,7 @@ class CustomValidationException extends Exception
 {
     private $details;
 
-    public __construct (string $message, array $details, int $code)
+    public function __construct (string $message, array $details, int $code)
     {
         parent::__construct($message, $code);
 
